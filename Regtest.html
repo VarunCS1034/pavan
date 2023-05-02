@@ -1,0 +1,136 @@
+
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+      }
+      
+      form {
+        margin: 20px auto;
+        max-width: 600px;
+        padding: 20px;
+        background-color: #f0f0f0;
+        border-radius: 10px;
+        box-shadow: 0 0 10px #ccc;
+      }
+      
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+      
+      input[type="text"],
+      input[type="email"],
+      input[type="password"],
+      input[type="tel"],
+      input[type="date"] {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        background-color: #fff;
+        box-shadow: 0 0 5px #ccc;
+        margin-bottom: 10px;
+      }
+      
+      input[type="submit"],
+      input[type="reset"] {
+        display: inline-block;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        background-color: #007bff;
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      
+      input[type="submit"]:hover,
+      input[type="reset"]:hover {
+        background-color: #0069d9;
+      }
+      
+      input[type="checkbox"] {
+        margin-right: 10px;
+      }
+      
+      .center {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Registration</h1>
+    
+    <form>
+      <label>Username:</label>
+      <input type="text" name="" value="user id" size=20 maxlength="16">
+      
+      <label>Mail:</label>
+      <input type="email" name="" value="abc@gmail.com">
+      
+      <label>Password:</label>
+      <input type="password">
+      
+      <label>Confirm Password:</label>
+      <input type="password">
+      
+      <label>Mobile Number:</label>
+      <input type="tel" id="phone" name="phone" pattern="[0-9]{10}">
+      
+      <label>DOB:</label>
+      <input type="date" name="DOB" value="DOB">
+      
+      <label>GENDER:</label>
+      <input type="radio" name="Gender" value="Male">Male
+      <input type="radio" name="Gender" value="Female">Female
+      <input type="radio" name="Gender" value="Other">Other
+      
+      <br>
+      <br>
+      
+      <label><input type="checkbox" name="">If you want to receive updates through mail</label>
+      
+      <div class="center">
+        <input type="button" value="Preview" onclick="displayFormValues()">
+        <input type="submit" formaction="C:\Users\KESHETTI\OneDrive\Documents\WAD(Varun)\Login.html" value="Submit">
+        <input type="reset" name="reset" value="Reset">
+        
+      </div>
+    </form>
+
+<div id="formValues"></div>
+
+
+</body>
+</html>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration Form</title>
+    </head>
+    <body>
+        <h1>Registration Form Data</h1>
+        <ul>
+            <li>Username: <%= request.getParameter("username") %></li>
+            <li>Mail: <%= request.getParameter("mail") %></li>
+            <li>Password: <%= request.getParameter("password") %></li>
+            <li>Confirm Password: <%= request.getParameter("confirmPassword") %></li>
+            <li>Mobile Number: <%= request.getParameter("phone") %></li>
+            <li>DOB: <%= request.getParameter("DOB") %></li>
+            <li>Gender: <%= request.getParameter("Gender") %></li>
+            <li>Updates: <%= request.getParameter("updates") %></li>
+        </ul>
+    </body>
+</html>
